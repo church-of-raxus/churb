@@ -33,17 +33,20 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if 'raxus' in message.content.lower():
+    elif get(message.author.roles, name="Father Raxus"):
+        await sendMessage("Yes, m'lord :pray:")
+
+    elif 'raxus' in message.content.lower():
         await sendMessage("Our Lord :pray:")
 
-    if message.content.lower() == '!quote':
+    elif message.content.lower() == '!quote':
         #generate random quote
         await sendMessage(random.choice(quotes))
 
-    if ', bot?' in message.content.lower():
+    elif ', bot?' in message.content.lower():
         await sendMessage(random.choice(answers))
 
-    if 'web' in message.content.lower():
+    elif 'web' in message.content.lower():
         await sendMessage("https://raxus-church.ml")
     
     
