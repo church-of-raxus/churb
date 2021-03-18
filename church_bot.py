@@ -36,7 +36,8 @@ async def on_message(message):
         await sendMessage("Our Lord :pray:")
 
     if message.content.lower() == '!quote':
-        await sendMessage(quote[random.randint(0, len(quote)])
+        #generate random quote
+        await sendMessage(quote[random.randint(0, (len(quote)-1)])
 
     if 'web' in message.content.lower():
         await sendMessage("https://raxus-church.ml")
