@@ -28,18 +28,21 @@ async def sendMessage(message):
 @client.event
 async def on_message(message):
     
+    if get(message.author.roles, name="Father Raxus"):
+        await sendMessage("Yes, m'lord :pray:")
+    
     # To prevent bot from messaging itself
-    if message.author == client.user:
-        return
+    elif message.author == client.user:
+        pass
 
-    if 'raxus' in message.content.lower():
+    elif 'raxus' in message.content.lower():
         await sendMessage("Our Lord :pray:")
 
-    if message.content.lower() == '!quote':
+    elif message.content.lower() == '!quote':
         #generate random quote
         await sendMessage(random.choice(quotes))
 
-    if 'web' in message.content.lower():
+    elif 'web' in message.content.lower():
         await sendMessage("https://raxus-church.ml")
     
     
