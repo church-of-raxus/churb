@@ -46,9 +46,11 @@ async def on_message(message):
     elif ', bot?' in message.content.lower():
         await sendMessage(random.choice(answers))
 
-    elif 'web' in message.content.lower():
+    elif 'web' or 'site' in message.content.lower():
         await sendMessage("https://raxus-church.ml")
-    
+     
+    elif 'rax' in message.content.lower():
+        await sendMessage("sus")
     
 #client.loop.create_task(time()) # Make needed loop
 client.run(TOKEN) # Launch bot
